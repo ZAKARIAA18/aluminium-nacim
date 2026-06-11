@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluminium Nacim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        [lang="ar"] body,
+        html[dir="rtl"] body {
+            font-family: 'Cairo', sans-serif;
+        }
+        html[dir="rtl"] .about-text::before {
+            left: auto;
+            right: 0;
+        }
+        html[dir="rtl"] nav ul {
+            padding-right: 0;
+        }
+        html[dir="rtl"] .logo-container {
+            flex-direction: row-reverse;
+        }
+        html[dir="rtl"] .hero-content {
+            text-align: right;
+        }
+        html[dir="rtl"] .hero-buttons {
+            justify-content: flex-end;
+        }
+        html[dir="rtl"] .contact-header {
+            direction: rtl;
+        }
+        html[dir="rtl"] .services-title {
+            direction: rtl;
+        }
+        html[dir="rtl"] .service-card h3,
+        html[dir="rtl"] .service-card p {
+            text-align: right;
+        }
+        html[dir="rtl"] .stat-card {
+            direction: rtl;
+        }
+        html[dir="rtl"] .about-container {
+            direction: rtl;
+        }
+        html[dir="rtl"] .about-text {
+            direction: rtl;
+            text-align: right;
+        }
+        html[dir="rtl"] .navbar-right {
+            flex-direction: row-reverse;
+        }
+        html[dir="rtl"] .contact-card {
+            direction: rtl;
+        }
+        html[dir="rtl"] .footer {
+            direction: rtl;
+        }
+        html[dir="rtl"] .hero-content p {
+            text-align: right;
+        }
+        html[dir="rtl"] .hero-content h1 {
+            text-align: right;
+        }
+
+        /* Active lang indicator */
+        .lang-menu a.active-lang {
+            background: #f0f5ff;
+            font-weight: 600;
+            color: #1E63FF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-section">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+
+            <div class="logo-container">
+                <img src="logo.png" alt="Aluminium Nacim">
+                <div class="logo-text">
+                    <h2 data-i18n="brand">Aluminium Nacim</h2>
+                    <span data-i18n="tagline">Menuiserie Aluminium</span>
+                </div>
+            </div>
+
+            <!-- BURGER BUTTON -->
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" onclick="closeMenu()" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="#about" onclick="closeMenu()" data-i18n="nav_about">À propos</a></li>
+                    <li><a href="#services" onclick="closeMenu()" data-i18n="nav_services">Services</a></li>
+                    <li><a href="#contact" onclick="closeMenu()" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar-right">
+                <div class="language-switcher">
+                    <button class="lang-btn" aria-label="Langue">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                    <div class="lang-menu">
+                        <a href="#" onclick="switchLang('fr'); return false;" id="lang-fr" class="active-lang">
+                            <img src="france.png" width="20" alt="FR"> Français
+                        </a>
+                        <a href="#" onclick="switchLang('ar'); return false;" id="lang-ar">
+                            <img src="maroc.png" width="20" alt="AR"> العربية
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#contact" class="devis-btn" data-i18n="devis_btn">
+                    Demander un devis
+                </a>
+            </div>
+
+        </header>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>
+                    <span data-i18n="hero_title_line1">Votre Expert en</span>
+                    <br>
+                    <span data-i18n="hero_title_line2" style="color:#4DA3FF;">Menuiserie Aluminium</span>
+                </h1>
+                <p data-i18n="hero_desc">
+                    Plus de 10 ans d'expérience dans la fabrication et
+                    l'installation de fenêtres, portes, cuisines modernes,
+                    dressings et solutions aluminium sur mesure à
+                    Benslimane, Bouznika, Mohammedia et Casablanca.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary" data-i18n="btn_services">Découvrir nos services</a>
+                    <a href="#contact" class="btn-secondary" data-i18n="btn_contact">Nous contacter</a>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- STATISTIQUES -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>10+</h3>
+            <p data-i18n="stat_exp">Années d'expérience</p>
+        </div>
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p data-i18n="stat_quality">Qualité garantie</p>
+        </div>
+        <div class="stat-card">
+            <h3>🇲🇦</h3>
+            <p data-i18n="stat_morocco">Intervention dans tout le Maroc</p>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 data-i18n="about_title">À propos de nous</h2>
+                <p data-i18n="about_p1">Nous sommes une entreprise spécialisée dans la menuiserie aluminium, située à Benslimane (Golf Chams la Ville). Avec plus de 10 ans d'expérience, nous nous engageons à offrir un service de haute qualité et un travail professionnel.</p>
+                <p data-i18n="about_p2">Nous intervenons dans plusieurs régions : Benslimane, Bouznika, Casablanca et Mohammedia, et nous nous déplaçons selon vos besoins pour assurer un service rapide et efficace.</p>
+                <p data-i18n="about_p3">Nous réalisons la fabrication et l'installation de fenêtres, portes en aluminium, cuisines modernes, dressings et tous travaux de menuiserie aluminium adaptés à votre style.</p>
+                <p data-i18n="about_p4">N'hésitez pas à nous contacter pour discuter de votre projet ou demander un devis.</p>
+                <p class="signature" data-i18n="about_sig">— Nacim Aluminium</p>
+            </div>
+            <div class="about-images">
+                <img src="about.png" alt="Travail aluminium 1">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2 class="services-title" data-i18n="services_title">Nos Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="porte.png" alt="Portes aluminium">
+                <h3 data-i18n="serv1_title">Portes aluminium</h3>
+                <p data-i18n="serv1_desc">Fabrication et installation de portes modernes, solides et sécurisées.</p>
+            </div>
+            <div class="service-card">
+                <img src="fenetre.png" alt="Fenêtres aluminium">
+                <h3 data-i18n="serv2_title">Fenêtres aluminium</h3>
+                <p data-i18n="serv2_desc">Fenêtres élégantes offrant isolation thermique et design moderne.</p>
+            </div>
+            <div class="service-card">
+                <img src="douche.png" alt="Douche aluminium">
+                <h3 data-i18n="serv3_title">Cabines de douche</h3>
+                <p data-i18n="serv3_desc">Installation de cabines de douche en aluminium et verre de haute qualité.</p>
+            </div>
+            <div class="service-card">
+                <img src="balconne.png" alt="Balcon aluminium">
+                <h3 data-i18n="serv4_title">Balcons aluminium</h3>
+                <p data-i18n="serv4_desc">Protection et design moderne pour vos balcons avec finition professionnelle.</p>
+            </div>
+            <div class="service-card">
+                <img src="mario.png" alt="Mario aluminium">
+                <h3 data-i18n="serv5_title">Mario</h3>
+                <p data-i18n="serv5_desc">Chambres modernes au design élégant, confort optimal et finitions en aluminium de haute qualité adaptées à votre style.</p>
+            </div>
+            <div class="service-card">
+                <img src="cuisine.png" alt="Cuisine moderne">
+                <h3 data-i18n="serv6_title">Cuisine</h3>
+                <p data-i18n="serv6_desc">Conception de cuisines modernes, élégantes et adaptées à votre espace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-header">
+            <span data-i18n="contact_label">CONTACT</span>
+            <h2 data-i18n="contact_title">Contacter Nacim Aluminium</h2>
+            <p data-i18n="contact_desc">Besoin d'une fenêtre, porte, cuisine, douche ou balcon en aluminium ? Contactez-nous dès aujourd'hui pour obtenir un devis gratuit.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <h3 data-i18n="card_phone_title">Téléphone</h3>
+                <p>06 82 11 73 04</p>
+                <p>06 52 39 35 43</p>
+                <a href="tel:+212682117304" class="contact-btn" data-i18n="card_phone_btn">Appeler maintenant</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3 data-i18n="card_wa_title">WhatsApp</h3>
+                <p data-i18n="card_wa_sub">Réponse rapide</p>
+                <a href="https://wa.me/212682117304" target="_blank" class="contact-btn" data-i18n="card_wa_btn">Écrire sur WhatsApp</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <h3 data-i18n="card_email_title">Email</h3>
+                <p>bouatiabilal@gmail.com</p>
+                <a href="mailto:bouatiabilal@gmail.com" class="contact-btn" data-i18n="card_email_btn">Envoyer un Email</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3 data-i18n="card_loc_title">Localisation</h3>
+                <p data-i18n="card_loc_city">Ben Slimane</p>
+                <a href="https://maps.app.goo.gl/427ehMBA85y9f1Tj9?g_st=ic" target="_blank" class="contact-btn" data-i18n="card_loc_btn">Voir sur Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p data-i18n="footer">© 2024 Aluminium Nacim — Tous droits réservés</p>
+    </footer>
+
+    <script>
+        /* ===== TRADUCTIONS ===== */
+        const translations = {
+            fr: {
+                brand: "Aluminium Nacim",
+                tagline: "Menuiserie Aluminium",
+                nav_home: "Accueil",
+                nav_about: "À propos",
+                nav_services: "Services",
+                nav_contact: "Contact",
+                devis_btn: "Demander un devis",
+                hero_title_line1: "Votre Expert en",
+                hero_title_line2: "Menuiserie Aluminium",
+                hero_desc: "Plus de 10 ans d'expérience dans la fabrication et l'installation de fenêtres, portes, cuisines modernes, dressings et solutions aluminium sur mesure à Benslimane, Bouznika, Mohammedia et Casablanca.",
+                btn_services: "Découvrir nos services",
+                btn_contact: "Nous contacter",
+                stat_exp: "Années d'expérience",
+                stat_quality: "Qualité garantie",
+                stat_morocco: "Intervention dans tout le Maroc",
+                about_title: "À propos de nous",
+                about_p1: "Nous sommes une entreprise spécialisée dans la menuiserie aluminium, située à Benslimane (Golf Chams la Ville). Avec plus de 10 ans d'expérience, nous nous engageons à offrir un service de haute qualité et un travail professionnel.",
+                about_p2: "Nous intervenons dans plusieurs régions : Benslimane, Bouznika, Casablanca et Mohammedia, et nous nous déplaçons selon vos besoins pour assurer un service rapide et efficace.",
+                about_p3: "Nous réalisons la fabrication et l'installation de fenêtres, portes en aluminium, cuisines modernes, dressings et tous travaux de menuiserie aluminium adaptés à votre style.",
+                about_p4: "N'hésitez pas à nous contacter pour discuter de votre projet ou demander un devis.",
+                about_sig: "— Nacim Aluminium",
+                services_title: "Nos Services",
+                serv1_title: "Portes aluminium",
+                serv1_desc: "Fabrication et installation de portes modernes, solides et sécurisées.",
+                serv2_title: "Fenêtres aluminium",
+                serv2_desc: "Fenêtres élégantes offrant isolation thermique et design moderne.",
+                serv3_title: "Cabines de douche",
+                serv3_desc: "Installation de cabines de douche en aluminium et verre de haute qualité.",
+                serv4_title: "Balcons aluminium",
+                serv4_desc: "Protection et design moderne pour vos balcons avec finition professionnelle.",
+                serv5_title: "Mario",
+                serv5_desc: "Chambres modernes au design élégant, confort optimal et finitions en aluminium de haute qualité adaptées à votre style.",
+                serv6_title: "Cuisine",
+                serv6_desc: "Conception de cuisines modernes, élégantes et adaptées à votre espace.",
+                contact_label: "CONTACT",
+                contact_title: "Contacter Nacim Aluminium",
+                contact_desc: "Besoin d'une fenêtre, porte, cuisine, douche ou balcon en aluminium ? Contactez-nous dès aujourd'hui pour obtenir un devis gratuit.",
+                card_phone_title: "Téléphone",
+                card_phone_btn: "Appeler maintenant",
+                card_wa_title: "WhatsApp",
+                card_wa_sub: "Réponse rapide",
+                card_wa_btn: "Écrire sur WhatsApp",
+                card_email_title: "Email",
+                card_email_btn: "Envoyer un Email",
+                card_loc_title: "Localisation",
+                card_loc_city: "Ben Slimane",
+                card_loc_btn: "Voir sur Google Maps",
+                footer: "© 2024 Aluminium Nacim — Tous droits réservés"
+            },
+            ar: {
+                brand: "ألومنيوم ناسيم",
+                tagline: "نجارة الألومنيوم",
+                nav_home: "الرئيسية",
+                nav_about: "من نحن",
+                nav_services: "خدماتنا",
+                nav_contact: "اتصل بنا",
+                devis_btn: "طلب عرض سعر",
+                hero_title_line1: "خبيرك في",
+                hero_title_line2: "نجارة الألومنيوم",
+                hero_desc: "أكثر من 10 سنوات من الخبرة في تصنيع وتركيب النوافذ والأبواب والمطابخ العصرية وغرف الملابس وحلول الألومنيوم المخصصة في بن سليمان، بوزنيقة، المحمدية والدار البيضاء.",
+                btn_services: "اكتشف خدماتنا",
+                btn_contact: "اتصل بنا",
+                stat_exp: "سنوات من الخبرة",
+                stat_quality: "جودة مضمونة",
+                stat_morocco: "خدمات في جميع أنحاء المغرب",
+                about_title: "من نحن",
+                about_p1: "نحن شركة متخصصة في نجارة الألومنيوم، تقع في بن سليمان (غولف شمس لافيل). بفضل أكثر من 10 سنوات من الخبرة، نلتزم بتقديم خدمة عالية الجودة وعمل احترافي.",
+                about_p2: "نتدخل في عدة مناطق: بن سليمان، بوزنيقة، الدار البيضاء والمحمدية، وننتقل حسب احتياجاتكم لضمان خدمة سريعة وفعّالة.",
+                about_p3: "نقوم بتصنيع وتركيب النوافذ وأبواب الألومنيوم والمطابخ العصرية وغرف الملابس وجميع أعمال نجارة الألومنيوم المناسبة لأسلوبكم.",
+                about_p4: "لا تترددوا في التواصل معنا لمناقشة مشروعكم أو طلب عرض سعر.",
+                about_sig: "— ناسيم ألومنيوم",
+                services_title: "خدماتنا",
+                serv1_title: "أبواب الألومنيوم",
+                serv1_desc: "تصنيع وتركيب أبواب عصرية متينة وآمنة.",
+                serv2_title: "نوافذ الألومنيوم",
+                serv2_desc: "نوافذ أنيقة توفر عزلاً حرارياً وتصميماً عصرياً.",
+                serv3_title: "كبائن الدش",
+                serv3_desc: "تركيب كبائن دش من الألومنيوم والزجاج عالي الجودة.",
+                serv4_title: "شرفات الألومنيوم",
+                serv4_desc: "حماية وتصميم عصري لشرفاتكم بتشطيب احترافي.",
+                serv5_title: "ماريو",
+                serv5_desc: "غرف عصرية بتصميم أنيق، راحة مثلى وتشطيبات ألومنيوم عالية الجودة تناسب أسلوبكم.",
+                serv6_title: "المطبخ",
+                serv6_desc: "تصميم مطابخ عصرية وأنيقة تتناسب مع مساحتكم.",
+                contact_label: "التواصل",
+                contact_title: "تواصل مع ناسيم ألومنيوم",
+                contact_desc: "هل تحتاج إلى نافذة، باب، مطبخ، دش أو شرفة من الألومنيوم؟ تواصل معنا اليوم للحصول على عرض سعر مجاني.",
+                card_phone_title: "الهاتف",
+                card_phone_btn: "اتصل الآن",
+                card_wa_title: "واتساب",
+                card_wa_sub: "رد سريع",
+                card_wa_btn: "راسلنا على واتساب",
+                card_email_title: "البريد الإلكتروني",
+                card_email_btn: "إرسال بريد إلكتروني",
+                card_loc_title: "الموقع",
+                card_loc_city: "بن سليمان",
+                card_loc_btn: "عرض على خرائط غوغل",
+                footer: "© 2024 ألومنيوم ناسيم — جميع الحقوق محفوظة"
+            }
+        };
+
+        let currentLang = 'fr';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            const isAr = lang === 'ar';
+
+            /* Direction & langue */
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+
+            /* Police de caractères */
+            document.body.style.fontFamily = isAr ? "'Cairo', sans-serif" : "'Poppins', sans-serif";
+
+            /* Traduire tous les éléments data-i18n */
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) {
+                    el.textContent = t[key];
+                }
+            });
+
+            /* Titre de la page */
+            document.title = isAr ? 'ألومنيوم ناسيم' : 'Aluminium Nacim';
+
+            /* Indicateur langue active */
+            document.getElementById('lang-fr').classList.toggle('active-lang', lang === 'fr');
+            document.getElementById('lang-ar').classList.toggle('active-lang', lang === 'ar');
+        }
+
+        /* ===== MENU BURGER ===== */
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        function closeMenu() {
+            nav.classList.remove('active');
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
