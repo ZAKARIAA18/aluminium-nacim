@@ -27,6 +27,7 @@ img {
 /* ===== HERO SECTION ===== */
 .hero-section {
     min-height: 100vh;
+    padding-top: 90px;
     background:
         linear-gradient(rgba(5,20,45,0.78), rgba(5,20,45,0.78)),
         url("hero.png");
@@ -39,20 +40,31 @@ img {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    width: 92%;
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 8px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 12px 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.08);
+    background: rgba(5, 20, 45, 0.15);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    animation: slideDown 1s ease;
-    position: relative;
-    z-index: 1000;
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+    animation: slideDown 0.8s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(8, 27, 55, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* LOGO */
@@ -561,7 +573,7 @@ nav ul li a:hover::after { width: 100%; }
 
 /* ===== ANIMATIONS ===== */
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-30px); }
+    from { opacity: 0; transform: translateY(-20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -575,15 +587,17 @@ nav ul li a:hover::after { width: 100%; }
 
     nav {
         position: absolute;
-        top: 80px;
-        left: 4%;
-        right: 4%;
-        width: 92%;
-        background: rgba(8,27,55,0.97);
+        top: 72px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(8,27,55,0.98);
         backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 16px;
-        padding: 20px 25px;
+        border: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-radius: 0;
+        padding: 20px 4%;
         display: none;
         z-index: 999;
     }
@@ -624,9 +638,7 @@ nav ul li a:hover::after { width: 100%; }
 /* ===== RESPONSIVE — MOBILE (≤ 768px) ===== */
 @media (max-width: 768px) {
 
-    /* Navbar */
     .navbar {
-        width: 94%;
         padding: 8px 16px;
     }
 
@@ -635,6 +647,8 @@ nav ul li a:hover::after { width: 100%; }
     .logo-text span { display: none; }
 
     /* Hero */
+    .hero-section { padding-top: 75px; }
+
     .hero {
         text-align: center;
         justify-content: center;
@@ -702,7 +716,6 @@ nav ul li a:hover::after { width: 100%; }
 @media (max-width: 480px) {
 
     .navbar {
-        width: 96%;
         padding: 8px 12px;
     }
 
@@ -711,6 +724,7 @@ nav ul li a:hover::after { width: 100%; }
     .lang-btn { width: 34px; height: 34px; font-size: 15px; }
 
     /* Hero */
+    .hero-section { padding-top: 68px; }
     .hero-content h1 { font-size: 24px; }
     .hero-content p { font-size: 13px; line-height: 1.7; }
 
